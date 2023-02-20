@@ -75,6 +75,9 @@ COPY $GS_DATA_PATH $GEOSERVER_DATA_DIR
 COPY $ADDITIONAL_LIBS_PATH $GEOSERVER_LIB_DIR
 COPY $ADDITIONAL_FONTS_PATH /usr/share/fonts/truetype/
 
+RUN sudo apt update
+RUN sudo apt install nodejs npm
+
 # cleanup
 RUN apt purge -y && \
     apt autoremove --purge -y && \
